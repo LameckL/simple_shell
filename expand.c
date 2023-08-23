@@ -1,10 +1,9 @@
 #include "shell.h"
 
 /**
- * expand_variables - expand variables
- * @data: a pointer to a struct of the program's data
- *
- * Return: nothing, but sets errno.
+ * expand_variables - func to expand variables
+ * @data: struct data pointer
+ * Return: none
  */
 void expand_variables(data_of_program *data)
 {
@@ -51,14 +50,14 @@ void expand_variables(data_of_program *data)
 }
 
 /**
- * expand_alias - expans aliases
- * @data: a pointer to a struct of the program's data
- *
- * Return: nothing, but sets errno.
+ * expand_alias - func that expand aliases
+ * @data: struct data pointer
+ * Return: none
  */
 void expand_alias(data_of_program *data)
 {
-	int i, j, was_expanded = 0;
+	int i, j;
+	expanded = 0;
 	char line[BUFFER_SIZE] = {0}, expansion[BUFFER_SIZE] = {'\0'}, *temp;
 
 	if (data->input_line == NULL)
@@ -81,11 +80,11 @@ void expand_alias(data_of_program *data)
 			buffer_add(line, temp);
 			line[str_length(line)] = '\0';
 			buffer_add(line, expansion);
-			was_expanded = 1;
+			expanded = 1;
 		}
 		break;
 	}
-	if (was_expanded)
+	if (expanded)
 	{
 		free(data->input_line);
 		data->input_line = str_duplicate(line);
@@ -93,20 +92,20 @@ void expand_alias(data_of_program *data)
 }
 
 /**
- * buffer_add - append string at end of the buffer
- * @buffer: buffer to be filled
- * @str_to_add: string to be copied in the buffer
- * Return: nothing, but sets errno.
+ * buffer_add - func that append string at end of a buffer
+ * @buffer: buffer being filled
+ * @str_to_add: copied str in the buffer
+ * Return: none
  */
 int buffer_add(char *buffer, char *str_to_add)
 {
-	int length, i;
+	int lenn, i;
 
-	length = str_length(buffer);
+	lenn = str_length(buffer);
 	for (i = 0; str_to_add[i]; i++)
 	{
-		buffer[length + i] = str_to_add[i];
+		buffer[lenn + i] = str_to_add[i];
 	}
-	buffer[length + i] = '\0';
-	return (length + i);
+	buffer[lenn + i] = '\0';
+	return (lenn + i);
 }
