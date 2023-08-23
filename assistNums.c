@@ -22,9 +22,9 @@ void long_to_string(long number, char *string, int base)
 	while (ente)
 	{
 		if (ente < 0)
-			string[index++] = lett[-(cociente % base)];
+			string[index++] = lett[-(ente % base)];
 		else
-			string[index++] = lett[cociente % base];
+			string[index++] = lett[ente % base];
 		ente /= base;
 	}
 	if (inNegative)
