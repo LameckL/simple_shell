@@ -9,6 +9,7 @@
 int print_alias(data_of_program *data, char *alias)
 {
 	int i, j, lenn;
+	int alias_length;
 	char buffer[250] = {'\0'};
 
 	if (data->alias_list)
