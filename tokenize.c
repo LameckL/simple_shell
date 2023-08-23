@@ -1,19 +1,20 @@
 #include "shell.h"
 /**
- * tokenize - this function separate the string using a designed delimiter
- * @data: a pointer to the program's data
- * Return: an array of the different parts of the string
+ * tokenize - func separating strings using a special delimiter
+ * @data: data pointer
+ * Return: string array
  */
 void tokenize(data_of_program *data)
 {
 	char *delimiter = " \t";
-	int i, j, counter = 2, length;
+	int i, j, lenn;
+	int counter = 2;
 
-	length = str_length(data->input_line);
-	if (length)
+	lenn = str_length(data->input_line);
+	if (lenn)
 	{
-		if (data->input_line[length - 1] == '\n')
-			data->input_line[length - 1] = '\0';
+		if (data->input_line[lenn - 1] == '\n')
+			data->input_line[lenn - 1] = '\0';
 	}
 
 	for (i = 0; data->input_line[i]; i++)
