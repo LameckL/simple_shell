@@ -62,7 +62,7 @@ char *get_alias(data_of_program *data, char *name)
 			return (data->alias_list[i] + lenn + 1);
 		}
 	}
-	
+
 	return (NULL);
 
 }

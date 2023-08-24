@@ -12,7 +12,6 @@ int execute(data_of_program *data)
 	reval = builtins_list(data);
 	if (reval != -1)
 		return (reval);
-	
 	reval = find_program(data);
 	if (reval)
 	{

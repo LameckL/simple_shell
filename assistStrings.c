@@ -26,7 +26,7 @@ int str_length(char *string)
 char *str_duplicate(char *string)
 {
 	char *result;
-	int i, lenn ;
+	int i, lenn;
 
 	if (string == NULL)
 		return (NULL);

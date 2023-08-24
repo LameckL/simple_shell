@@ -27,7 +27,7 @@ char *env_get_key(char *key, data_of_program *data)
 }
 
 /**
- * env_set_key - func that overwrites the val of the environment var orcreate it
+ * env_set_key - func overwriting the val of the environment var orcreate it
  * @key: variable name being set
  * @value: new value
  * @data: struct data

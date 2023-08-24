@@ -52,7 +52,6 @@ int builtin_env(data_of_program *data)
  */
 int builtin_set_env(data_of_program *data)
 {
-	
 	if (data->tokens[1] == NULL || data->tokens[2] == NULL)
 		return (0);
 	if (data->tokens[3] != NULL)
