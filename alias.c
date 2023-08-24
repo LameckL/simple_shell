@@ -8,17 +8,17 @@
  */
 int print_alias(data_of_program *data, char *alias)
 {
-	int i, j, lenn;
-	int alias_length;
+	int i, j;
+	int alias_lenn;
 	char buffer[250] = {'\0'};
 
 	if (data->alias_list)
 	{
-		lenn = str_length(alias);
+		alias_lenn = str_length(alias);
 		for (i = 0; data->alias_list[i]; i++)
 		{
-			if (!alias || (str_compare(data->alias_list[i], alias, alias_length)
-				&&	data->alias_list[i][alias_length] == '='))
+			if (!alias || (str_compare(data->alias_list[i], alias, alias_lenn)
+				&&	data->alias_list[i][alias_lenn] == '='))
 			{
 				for (j = 0; data->alias_list[i][j]; j++)
 				{

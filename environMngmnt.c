@@ -37,7 +37,7 @@ char *env_get_key(char *key, data_of_program *data)
 int env_set_key(char *key, char *value, data_of_program *data)
 {
 	int i;
-	key_lenn = 0, new_key = 1;
+	int key_lenn = 0, new_key = 1;
 
 	if (key == NULL || value == NULL || data->env == NULL)
 		return (1);
@@ -45,6 +45,7 @@ int env_set_key(char *key, char *value, data_of_program *data)
 	key_lenn = str_length(key);
 
 	for (i = 0; data->env[i]; i++)
+	{
 		if (str_compare(key, data->env[i], key_lenn) &&
 		 data->env[i][key_lenn] == '=')
 		{

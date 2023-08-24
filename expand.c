@@ -57,7 +57,7 @@ void expand_variables(data_of_program *data)
 void expand_alias(data_of_program *data)
 {
 	int i, j;
-	expanded = 0;
+	int expanded = 0;
 	char line[BUFFER_SIZE] = {0}, expansion[BUFFER_SIZE] = {'\0'}, *temp;
 
 	if (data->input_line == NULL)
